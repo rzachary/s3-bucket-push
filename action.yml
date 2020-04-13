@@ -1,0 +1,9 @@
+name: "S3 Blog Push"
+description: "Push blog contents to an S3 Bucket"
+author: rzachary
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: refresh-cw
+  color: yellow
