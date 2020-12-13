@@ -2,6 +2,9 @@
 
 set -e
 
+echo $AWS_S3_BUCKET
+echo $SOURCE_DIR
+
 # check to see the AWS_REGION is set if not set it to the Default us-east-1
 if [ -z "$AWS_REGION" ]; then
   AWS_REGION="us-east-1"
@@ -30,7 +33,7 @@ if [ -n "$AWS_S3_ENDPOINT" ]; then
   ENDPOINT_APPEND="--endpoint-url $AWS_S3_ENDPOINT"
 fi
 
-# create a temporary aws profile to run the command 
+# create a temporary aws profile to run the command
 aws configure --profile s3-bucket-push <<-EOF > /dev/null 2>&1
 ${AWS_ACCESS_KEY_ID}
 ${AWS_SECRET_ACCESS_KEY}
